@@ -21,7 +21,7 @@ enum Endpoint {
 		var endpoint:String
 		switch self {
 			case .login:
-				endpoint = "login"
+				endpoint = "auth/login"
             case .logout:
                 endpoint = "logout"
             case .submit:
