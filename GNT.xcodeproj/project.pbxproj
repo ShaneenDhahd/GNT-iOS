@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C58254D3BB2C34AF1682642 /* Pods_GNT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C719B8A9A8047BAC9DCA516 /* Pods_GNT.framework */; };
 		7F09BC512A238D9D00AA34B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F09BC502A238D9D00AA34B1 /* AppDelegate.swift */; };
 		7F09BC532A238D9D00AA34B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F09BC522A238D9D00AA34B1 /* SceneDelegate.swift */; };
 		7F09BC552A238D9D00AA34B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F09BC542A238D9D00AA34B1 /* ViewController.swift */; };
 		7F09BC582A238D9D00AA34B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F09BC562A238D9D00AA34B1 /* Main.storyboard */; };
 		7F09BC5A2A238D9D00AA34B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F09BC592A238D9D00AA34B1 /* Assets.xcassets */; };
 		7F09BC5D2A238D9D00AA34B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F09BC5B2A238D9D00AA34B1 /* LaunchScreen.storyboard */; };
-		7F09BC682A238D9D00AA34B1 /* GNTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F09BC672A238D9D00AA34B1 /* GNTTests.swift */; };
-		7F09BC722A238D9E00AA34B1 /* GNTUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F09BC712A238D9E00AA34B1 /* GNTUITests.swift */; };
-		7F09BC742A238D9E00AA34B1 /* GNTUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F09BC732A238D9E00AA34B1 /* GNTUITestsLaunchTests.swift */; };
+		7F09BC872A239FD400AA34B1 /* AlamofireBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F09BC842A239FD400AA34B1 /* AlamofireBuilder.swift */; };
+		7F09BC882A239FD400AA34B1 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F09BC852A239FD400AA34B1 /* EndPoints.swift */; };
+		7F09BC892A239FD400AA34B1 /* ApiCallBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F09BC862A239FD400AA34B1 /* ApiCallBack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22E0DE82058CB8E6255528DE /* Pods-GNT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GNT.debug.xcconfig"; path = "Target Support Files/Pods-GNT/Pods-GNT.debug.xcconfig"; sourceTree = "<group>"; };
 		7F09BC4D2A238D9D00AA34B1 /* GNT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GNT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F09BC502A238D9D00AA34B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F09BC522A238D9D00AA34B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,10 +47,12 @@
 		7F09BC5C2A238D9D00AA34B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F09BC5E2A238D9D00AA34B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F09BC632A238D9D00AA34B1 /* GNTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GNTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7F09BC672A238D9D00AA34B1 /* GNTTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNTTests.swift; sourceTree = "<group>"; };
 		7F09BC6D2A238D9E00AA34B1 /* GNTUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GNTUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7F09BC712A238D9E00AA34B1 /* GNTUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNTUITests.swift; sourceTree = "<group>"; };
-		7F09BC732A238D9E00AA34B1 /* GNTUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNTUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7F09BC842A239FD400AA34B1 /* AlamofireBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireBuilder.swift; sourceTree = "<group>"; };
+		7F09BC852A239FD400AA34B1 /* EndPoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
+		7F09BC862A239FD400AA34B1 /* ApiCallBack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiCallBack.swift; sourceTree = "<group>"; };
+		8C719B8A9A8047BAC9DCA516 /* Pods_GNT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GNT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8456E7C0AFE83EDC05D297F /* Pods-GNT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GNT.release.xcconfig"; path = "Target Support Files/Pods-GNT/Pods-GNT.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C58254D3BB2C34AF1682642 /* Pods_GNT.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,9 +85,9 @@
 			isa = PBXGroup;
 			children = (
 				7F09BC4F2A238D9D00AA34B1 /* GNT */,
-				7F09BC662A238D9D00AA34B1 /* GNTTests */,
-				7F09BC702A238D9E00AA34B1 /* GNTUITests */,
 				7F09BC4E2A238D9D00AA34B1 /* Products */,
+				EA1D758422B5EB1D90D7F7A0 /* Pods */,
+				B7773E538FB8886468C9C45F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +104,7 @@
 		7F09BC4F2A238D9D00AA34B1 /* GNT */ = {
 			isa = PBXGroup;
 			children = (
+				7F09BC812A239F8300AA34B1 /* Network */,
 				7F09BC502A238D9D00AA34B1 /* AppDelegate.swift */,
 				7F09BC522A238D9D00AA34B1 /* SceneDelegate.swift */,
 				7F09BC542A238D9D00AA34B1 /* ViewController.swift */,
@@ -110,21 +116,31 @@
 			path = GNT;
 			sourceTree = "<group>";
 		};
-		7F09BC662A238D9D00AA34B1 /* GNTTests */ = {
+		7F09BC812A239F8300AA34B1 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				7F09BC672A238D9D00AA34B1 /* GNTTests.swift */,
+				7F09BC842A239FD400AA34B1 /* AlamofireBuilder.swift */,
+				7F09BC862A239FD400AA34B1 /* ApiCallBack.swift */,
+				7F09BC852A239FD400AA34B1 /* EndPoints.swift */,
 			);
-			path = GNTTests;
+			path = Network;
 			sourceTree = "<group>";
 		};
-		7F09BC702A238D9E00AA34B1 /* GNTUITests */ = {
+		B7773E538FB8886468C9C45F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7F09BC712A238D9E00AA34B1 /* GNTUITests.swift */,
-				7F09BC732A238D9E00AA34B1 /* GNTUITestsLaunchTests.swift */,
+				8C719B8A9A8047BAC9DCA516 /* Pods_GNT.framework */,
 			);
-			path = GNTUITests;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA1D758422B5EB1D90D7F7A0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				22E0DE82058CB8E6255528DE /* Pods-GNT.debug.xcconfig */,
+				E8456E7C0AFE83EDC05D297F /* Pods-GNT.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,9 +150,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F09BC772A238D9E00AA34B1 /* Build configuration list for PBXNativeTarget "GNT" */;
 			buildPhases = (
+				D6D6A8A041BE5574A51402F8 /* [CP] Check Pods Manifest.lock */,
 				7F09BC492A238D9D00AA34B1 /* Sources */,
 				7F09BC4A2A238D9D00AA34B1 /* Frameworks */,
 				7F09BC4B2A238D9D00AA34B1 /* Resources */,
+				D43A9DCE4D7724C89369D598 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,12 +271,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D43A9DCE4D7724C89369D598 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GNT/Pods-GNT-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GNT/Pods-GNT-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GNT/Pods-GNT-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6D6A8A041BE5574A51402F8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GNT-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7F09BC492A238D9D00AA34B1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F09BC872A239FD400AA34B1 /* AlamofireBuilder.swift in Sources */,
+				7F09BC882A239FD400AA34B1 /* EndPoints.swift in Sources */,
 				7F09BC552A238D9D00AA34B1 /* ViewController.swift in Sources */,
+				7F09BC892A239FD400AA34B1 /* ApiCallBack.swift in Sources */,
 				7F09BC512A238D9D00AA34B1 /* AppDelegate.swift in Sources */,
 				7F09BC532A238D9D00AA34B1 /* SceneDelegate.swift in Sources */,
 			);
@@ -268,7 +331,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F09BC682A238D9D00AA34B1 /* GNTTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,8 +338,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F09BC742A238D9E00AA34B1 /* GNTUITestsLaunchTests.swift in Sources */,
-				7F09BC722A238D9E00AA34B1 /* GNTUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,7 +492,9 @@
 		};
 		7F09BC782A238D9E00AA34B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22E0DE82058CB8E6255528DE /* Pods-GNT.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -446,7 +508,8 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
+					"@loader",
+					path/Frameworks,
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
@@ -463,7 +526,9 @@
 		};
 		7F09BC792A238D9E00AA34B1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8456E7C0AFE83EDC05D297F /* Pods-GNT.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -477,7 +542,8 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
+					"@loader",
+					path/Frameworks,
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
