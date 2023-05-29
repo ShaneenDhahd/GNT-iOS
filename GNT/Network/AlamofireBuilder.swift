@@ -33,16 +33,15 @@ class AlamofireBuilder {
 	}
 	
 	private func parseData<Model: Decodable>(data: Data?) -> ApiCallback<Model> {
-		guard let data = data else {return ApiCallback.failure("Data are nil")}
+        guard let data = data else {return ApiCallback.failure(nil)}
         let str = String(decoding: data, as: UTF8.self)
         print("data string \(str)")
 		do {
 			let data = try JSONDecoder().decode(Model.self, from: data)
-            print("succeeded \(data)")
 			return .success(model: data)
 		} catch {
-            print("error \(error.localizedDescription)")
-			return .failure(error.localizedDescription)
+            let errorModel = try? JSONDecoder().decode(ErrorModel.self, from: data)
+			return .failure(errorModel)
 		}
 	}
 }

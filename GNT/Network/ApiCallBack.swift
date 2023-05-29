@@ -10,5 +10,5 @@ import Foundation
 
 enum ApiCallback<Model: Encodable> {
 	case success(model: Model)
-	case failure(String)
+	case failure(ErrorModel?)
 }

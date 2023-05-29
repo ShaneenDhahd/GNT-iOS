@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
 
     
+    @IBOutlet weak var errorMessage: UILabel!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var email: UITextField!
@@ -46,6 +47,11 @@ class ViewController: UIViewController {
         if validateFields() {
             viewModel.login(email: emailText, password: passwordText)
             loadingIndicator.start(button: sender)
+            self.errorMessage.isHidden = true
+            errorMessage.text = "Wrong email or password"
+        } else {
+            errorMessage.text = "all fields are required"
+            errorMessage.isHidden = false
         }
         handleLoginCallback()
         
@@ -54,10 +60,12 @@ class ViewController: UIViewController {
     private func handleLoginCallback(){
         viewModel.showError = { [self] in
             loadingIndicator.stop(button: loginBtn, title: "Login")
+            self.errorMessage.isHidden = false
         }
         viewModel.updateUI = { [self] in
             loadingIndicator.stop(button: loginBtn, title: "Login")
             navigateToForm()
+            self.errorMessage.isHidden = true
         }
 
     }
