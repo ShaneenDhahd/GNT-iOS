@@ -72,11 +72,16 @@ class ViewController: UIViewController {
     
     private func navigateToForm(){
         DispatchQueue.main.async { [self] in
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let formViewController = storyboard.instantiateViewController(withIdentifier: "form") as! FormViewController
-            navigationController?.pushViewController(formViewController, animated: true)        }
+            performSegue(withIdentifier: "form", sender: self)
+        }
     }
-    
+//     private func navigateToForm(){
+//        DispatchQueue.main.async { [self] in
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let formViewController = storyboard.instantiateViewController(withIdentifier: "form") as! FormViewController
+//            navigationController?.pushViewController(formViewController, animated: true)        }
+//    }
+//
     private func validateFields() -> Bool {
         if let email = email.text, let password = password.text {
             emailText = email

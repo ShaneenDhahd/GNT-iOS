@@ -12,6 +12,22 @@ class AlamofireBuilder {
 	private let af = Alamofire.AF
 	
 
+    func submitForm(name: String, username: String, gov: String, comment: String, gps: String,  completion: @escaping (ApiCallback<SubmitModel?>)->()){
+        
+        let parameters: [String: Any] =
+        [
+            "name": name,
+            "username": username,
+            "gov": gov,
+            "comment": comment,
+            "gps": gps
+        ]
+        
+        makeRequest(url: .submit, method: .post, parameters: parameters) { submitData in
+            completion(self.parseData(data: submitData))
+        }
+    }
+    
     func login(email: String, password: String, completion: @escaping (ApiCallback<LoginModel?>)->() ){
         let parameters: [String: Any] =
         [
@@ -24,10 +40,20 @@ class AlamofireBuilder {
         }
     }
     
-    private func makeRequest(url: Endpoint, method: HTTPMethod = .get, parameters: Parameters, encoder: ParameterEncoding = URLEncoding.default, completion: @escaping (Data?)->()  ){
-		af.request(url.url, method: method, parameters: parameters, encoding: encoder, requestModifier: { request in
-			request.cachePolicy = .reloadIgnoringCacheData
-		}).response { data in
+    func getGovs(completion: @escaping (ApiCallback<GovernmentsModel?>)->()){
+        makeRequest(url: .getGovernesses) { govs in
+            completion(self.parseData(data: govs))
+        }
+    }
+    
+    private func makeRequest(url: Endpoint, method: HTTPMethod = .get, parameters: Parameters? = [:], encoder: ParameterEncoding = URLEncoding.default, completion: @escaping (Data?)->()  ){
+        
+        var header: HTTPHeaders? = HTTPHeaders()
+        if let user = UserInformation.user {
+            header?.add(HTTPHeader(name: "Authorization", value: "Bearer \(user.data.accessToken)"))
+        }
+        
+        af.request(url.url, method: method, parameters: parameters, encoding: encoder, headers: header).response { data in
 			completion(data.data)
 		}
 	}

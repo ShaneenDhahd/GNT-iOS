@@ -24,7 +24,7 @@ extension UITextField {
 fileprivate func setPasswordToggleImage(_ button: UIButton) {
     if(isSecureTextEntry){
         button.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
-    }else{
+    } else{
         button.setImage(UIImage(systemName: "eye.fill"), for: .normal)
     }
 }
@@ -45,4 +45,35 @@ func enablePasswordToggle(){
     self.isSecureTextEntry = !self.isSecureTextEntry
     setPasswordToggleImage(sender as! UIButton)
 }
+}
+public extension UIView {
+
+    func shake(for duration: TimeInterval = 0.5, withTranslation translation: CGFloat = 10) {
+        let propertyAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 0.3) {
+               self.layer.borderColor = UIColor.red.cgColor
+               self.layer.borderWidth = 1
+               self.transform = CGAffineTransform(translationX: translation, y: 0)
+           }
+
+           propertyAnimator.addAnimations({
+               self.transform = CGAffineTransform(translationX: 0, y: 0)
+           }, delayFactor: 0.2)
+
+           propertyAnimator.addCompletion { (_) in
+               self.layer.borderWidth = 0
+           }
+
+           propertyAnimator.startAnimation()
+    }
+}
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }

@@ -6,8 +6,6 @@
 //
 
 import Foundation
-import UIKit
-import RealmSwift
 
 class LoginViewModel {
     
@@ -19,6 +17,8 @@ class LoginViewModel {
     var showLoading: (()->())?
     var hideLoading: (()->())?
     
+    private let userInfo = UserInformation()
+    
     func login(email: String, password: String){
         showLoading?()
         AlamofireBuilder().login(email: email, password: password) { response in
@@ -26,7 +26,7 @@ class LoginViewModel {
             switch(response){
             case .success(let model):
                 if let model = model {
-                    self.storeData(user: model)
+                    self.userInfo.storeData(user: model)
                     self.updateUI?()
                 }
             case .failure(_):
@@ -35,32 +35,5 @@ class LoginViewModel {
         }
     }
     
-    
-    private func storeData(user: LoginModel){
-        let realm = try! Realm()
-        try! realm.write({
-            clearCache(realm)
-            let loginRealm = LoginRealm()
-            loginRealm.loginModel = user
-            print("login realm model \(loginRealm.loginModel), \(user)")
-            realm.add(loginRealm)
-        })
-    }
-    
-    func getUser() -> LoginModel? {
-        let realm = try! Realm()
-        let realmData = realm.object(ofType: LoginRealm.self, forPrimaryKey: "userRealm")
-        if let loginRealmObject = realmData?.loginModel {
-            return loginRealmObject
-        } else {
-            return nil
-        }
-    }
-    private func clearCache(_ realm: Realm) {
-        let loginRealmObject = realm.object(ofType: LoginRealm.self, forPrimaryKey: "userRealm")
-        if let loginRealmObject = loginRealmObject {
-            realm.delete(loginRealmObject.self)
-        }
-    }
-    
+   
 }
