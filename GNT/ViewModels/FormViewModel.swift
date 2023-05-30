@@ -14,7 +14,11 @@ class FormViewModel {
     
    
     var updateGovernments: ((GovernmentsModel)->())?
+    
     var submitedData: ((FormModel)->())?
+    
+    var getFormsData: ((FormsModel)->())?
+    
     var showError: (()->())?
     var showLoading: (()->())?
     var hideLoading: (()->())?
@@ -29,6 +33,21 @@ class FormViewModel {
             case .success(let model):
                 if let model = model {
                     self.updateGovernments?(model)
+                }
+            case .failure(_):
+                self.showError?()
+            }
+        }
+    }
+    
+    func getForms(){
+        showLoading?()
+        AlamofireBuilder().getForms() { response in
+            self.hideLoading?()
+            switch(response){
+            case .success(let model):
+                if let model = model {
+                    self.getFormsData?(model)
                 }
             case .failure(_):
                 self.showError?()

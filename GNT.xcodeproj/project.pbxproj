@@ -30,6 +30,9 @@
 		7F7D4B172A2517CA002E46CF /* FormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D4B162A2517CA002E46CF /* FormViewModel.swift */; };
 		7F8433AF2A267AE300F906CB /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8433AE2A267AE300F906CB /* LandingViewController.swift */; };
 		7F8433B12A26869800F906CB /* FormsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8433B02A26869800F906CB /* FormsViewController.swift */; };
+		7F8433B52A26907100F906CB /* FormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8433B32A26907100F906CB /* FormCell.swift */; };
+		7F8433B62A26907100F906CB /* FormCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F8433B42A26907100F906CB /* FormCell.xib */; };
+		7F8433B82A269D4700F906CB /* FormMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8433B72A269D4700F906CB /* FormMapViewController.swift */; };
 		7FCEDAC92A25382D00AE5F47 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCEDAC82A25382D00AE5F47 /* MapViewController.swift */; };
 		7FCEDACB2A25656100AE5F47 /* FormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCEDACA2A25656100AE5F47 /* FormModel.swift */; };
 /* End PBXBuildFile section */
@@ -82,6 +85,9 @@
 		7F7D4B162A2517CA002E46CF /* FormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewModel.swift; sourceTree = "<group>"; };
 		7F8433AE2A267AE300F906CB /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		7F8433B02A26869800F906CB /* FormsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormsViewController.swift; sourceTree = "<group>"; };
+		7F8433B32A26907100F906CB /* FormCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormCell.swift; sourceTree = "<group>"; };
+		7F8433B42A26907100F906CB /* FormCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FormCell.xib; sourceTree = "<group>"; };
+		7F8433B72A269D4700F906CB /* FormMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormMapViewController.swift; sourceTree = "<group>"; };
 		7FCEDAC82A25382D00AE5F47 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		7FCEDACA2A25656100AE5F47 /* FormModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormModel.swift; sourceTree = "<group>"; };
 		83E1A0D7476756AC68A0CC50 /* Pods-GNT-GNTUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GNT-GNTUITests.release.xcconfig"; path = "Target Support Files/Pods-GNT-GNTUITests/Pods-GNT-GNTUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -140,6 +146,7 @@
 		7F09BC4F2A238D9D00AA34B1 /* GNT */ = {
 			isa = PBXGroup;
 			children = (
+				7F8433B22A26904900F906CB /* customViews */,
 				7F7D4B092A241211002E46CF /* screens */,
 				7F7D4B042A23EF8F002E46CF /* ViewModels */,
 				7F7D4B012A23D945002E46CF /* Models */,
@@ -203,8 +210,18 @@
 				7FCEDAC82A25382D00AE5F47 /* MapViewController.swift */,
 				7F8433AE2A267AE300F906CB /* LandingViewController.swift */,
 				7F8433B02A26869800F906CB /* FormsViewController.swift */,
+				7F8433B72A269D4700F906CB /* FormMapViewController.swift */,
 			);
 			path = screens;
+			sourceTree = "<group>";
+		};
+		7F8433B22A26904900F906CB /* customViews */ = {
+			isa = PBXGroup;
+			children = (
+				7F8433B32A26907100F906CB /* FormCell.swift */,
+				7F8433B42A26907100F906CB /* FormCell.xib */,
+			);
+			path = customViews;
 			sourceTree = "<group>";
 		};
 		B7773E538FB8886468C9C45F /* Frameworks */ = {
@@ -342,6 +359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F09BC5D2A238D9D00AA34B1 /* LaunchScreen.storyboard in Resources */,
+				7F8433B62A26907100F906CB /* FormCell.xib in Resources */,
 				7F09BC5A2A238D9D00AA34B1 /* Assets.xcassets in Resources */,
 				7F09BC582A238D9D00AA34B1 /* Main.storyboard in Resources */,
 			);
@@ -518,8 +536,10 @@
 				7F09BC512A238D9D00AA34B1 /* AppDelegate.swift in Sources */,
 				7F09BC532A238D9D00AA34B1 /* SceneDelegate.swift in Sources */,
 				7F7D4B132A251481002E46CF /* UserInformation.swift in Sources */,
+				7F8433B52A26907100F906CB /* FormCell.swift in Sources */,
 				7F7D4B062A23EFCD002E46CF /* LoginViewModel.swift in Sources */,
 				7F7D4B082A2403EB002E46CF /* LoginRealm.swift in Sources */,
+				7F8433B82A269D4700F906CB /* FormMapViewController.swift in Sources */,
 				7FCEDACB2A25656100AE5F47 /* FormModel.swift in Sources */,
 				7F7D4B152A2515A1002E46CF /* GovernemtsModel.swift in Sources */,
 				7F8433AF2A267AE300F906CB /* LandingViewController.swift in Sources */,

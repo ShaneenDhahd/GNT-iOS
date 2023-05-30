@@ -36,11 +36,9 @@ class LoginViewModel {
     }
     
    func refresh(){
-       print("refresh response 1")
 
         showLoading?()
         AlamofireBuilder().refresh() { response in
-            print("refresh response \(response)")
             self.hideLoading?()
             switch(response){
             case .success(let model):
