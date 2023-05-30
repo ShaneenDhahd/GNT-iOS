@@ -10,13 +10,13 @@
 import Foundation
 
 // MARK: - GovernmentsModel
-struct SubmitModel: Codable {
+struct FormModel: Codable {
     let message: String
-    let data: SubmitUser
+    let data: FormUser
 }
 
 // MARK: - DataClass
-struct SubmitUser: Codable {
+struct FormUser: Codable {
     let name, username, gov, comment: String
     let gps, updatedAt, createdAt: String
     let id: Int

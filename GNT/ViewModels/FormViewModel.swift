@@ -14,7 +14,7 @@ class FormViewModel {
     
    
     var updateGovernments: ((GovernmentsModel)->())?
-    var submitedData: ((SubmitModel)->())?
+    var submitedData: ((FormModel)->())?
     var showError: (()->())?
     var showLoading: (()->())?
     var hideLoading: (()->())?

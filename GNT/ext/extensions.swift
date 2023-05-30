@@ -76,4 +76,9 @@ extension UIViewController {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
+    func navigateTo(id: String) {
+        DispatchQueue.main.async { [self] in
+            performSegue(withIdentifier: id, sender: self)
+        }
+    }
 }

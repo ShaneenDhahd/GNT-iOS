@@ -12,7 +12,7 @@ class AlamofireBuilder {
 	private let af = Alamofire.AF
 	
 
-    func submitForm(name: String, username: String, gov: String, comment: String, gps: String,  completion: @escaping (ApiCallback<SubmitModel?>)->()){
+    func submitForm(name: String, username: String, gov: String, comment: String, gps: String,  completion: @escaping (ApiCallback<FormModel?>)->()){
         
         let parameters: [String: Any] =
         [
@@ -36,6 +36,12 @@ class AlamofireBuilder {
         ]
         
         makeRequest(url: .login, method: .post, parameters: parameters) { loginData in
+            completion(self.parseData(data: loginData))
+        }
+    }
+    func refresh(completion: @escaping (ApiCallback<LoginModel?>)->() ){
+        
+        makeRequest(url: .refresh, method: .post){ loginData in
             completion(self.parseData(data: loginData))
         }
     }

@@ -31,7 +31,7 @@ enum Endpoint {
             case .getGovernesses:
                 endpoint = "v1/getGovernesses"
             case .refresh:
-                endpoint = "refresh"
+                endpoint = "auth/refresh"
 		}
 		return baseURL + endpoint
 	}

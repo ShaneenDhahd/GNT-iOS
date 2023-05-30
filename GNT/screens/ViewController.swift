@@ -64,17 +64,12 @@ class ViewController: UIViewController {
         }
         viewModel.updateUI = { [self] in
             loadingIndicator.stop(button: loginBtn, title: "Login")
-            navigateToForm()
+            navigateTo(id: "form_id")
             self.errorMessage.isHidden = true
         }
 
     }
-    
-    private func navigateToForm(){
-        DispatchQueue.main.async { [self] in
-            performSegue(withIdentifier: "form", sender: self)
-        }
-    }
+   
 //     private func navigateToForm(){
 //        DispatchQueue.main.async { [self] in
 //            let storyboard = UIStoryboard(name: "Main", bundle: nil)

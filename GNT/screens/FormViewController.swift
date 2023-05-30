@@ -43,7 +43,9 @@ class FormViewController: UITableViewController {
     
     private func initViews(){
         hideKeyboardWhenTappedAround()
-        
+        navigationController?.view.backgroundColor = UIColor.white
+        navigationController?.navigationBar.barTintColor = UIColor.white
+
         govPicker.delegate = self
         govPicker.dataSource = self
 
@@ -65,7 +67,22 @@ class FormViewController: UITableViewController {
         formVM.submitedData = { submitModel in
             DispatchQueue.main.async { [self] in
                 submitIndicator.stop(button: submitBtn, title: "Submit")
+                clearFields()
+                navigationController?.popViewController(animated: true)
             }
+        }
+    }
+    
+    private func clearFields(){
+        DispatchQueue.main.async { [self] in
+            usernameField.text = ""
+            nameField.text = ""
+            commentField.text = ""
+            govPicker.selectRow(0, inComponent: 0, animated: true)
+            submitBtn.isEnabled = false
+            UserInformation.lat = nil
+            UserInformation.long = nil
+            UserInformation.didSelectLocation = false
         }
     }
     
