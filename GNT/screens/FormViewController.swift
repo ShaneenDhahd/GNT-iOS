@@ -30,22 +30,32 @@ class FormViewController: UITableViewController {
     
     var listOfGov: GovernmentsModel = []
     
+  
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         submitBtn.isEnabled = UserInformation.didSelectLocation
         
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.isHidden = true
     }
    
     override func viewDidLoad() {
         super.viewDidLoad()
         initViews()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.view.backgroundColor = UIColor.white
+        navigationController?.navigationBar.barTintColor = UIColor.white
+        navigationController?.navigationBar.isHidden = false
+
+    }
     
     private func initViews(){
         hideKeyboardWhenTappedAround()
-        navigationController?.view.backgroundColor = UIColor.white
-        navigationController?.navigationBar.barTintColor = UIColor.white
-
+        
         govPicker.delegate = self
         govPicker.dataSource = self
 
@@ -55,7 +65,6 @@ class FormViewController: UITableViewController {
             DispatchQueue.main.async {
                 self.govPicker.reloadAllComponents()
                 self.govIndicator.stopAnimating()
-                print("table view \(self.listOfGov[1].govName)")
             }
         }
         
@@ -132,7 +141,6 @@ extension FormViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         listOfGov.count
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        print("table view \(listOfGov[row].govName)")
         return listOfGov[row].govName
     }
     

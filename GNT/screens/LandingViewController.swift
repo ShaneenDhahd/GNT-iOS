@@ -18,7 +18,6 @@ class LandingViewController: UIViewController {
     }
     
     private func checkToken(){
-        print("calling refresh")
         loginVM.refresh()
         loginVM.updateUI = { [self] in
             navigateTo(id:"forms_id")

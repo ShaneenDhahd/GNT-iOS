@@ -27,7 +27,7 @@ enum Endpoint {
             case .submit:
                 endpoint = "auth/submit"
             case .listData:
-                endpoint = "listData"
+                endpoint = "auth/listData"
             case .getGovernesses:
                 endpoint = "v1/getGovernesses"
             case .refresh:

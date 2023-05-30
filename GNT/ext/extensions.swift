@@ -20,6 +20,24 @@ extension UIActivityIndicatorView {
         button.isEnabled = false
     }
 }
+
+extension UILabel {
+    func setText(_ text: Any?){
+        if let text = text {
+            self.text = "\(text)"
+        }
+    }
+}
+
+extension String {
+    func formatDate() -> String? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM d, yyyy"
+        dateFormatter.locale = Locale()
+        return dateFormatter.date(from: self)?.formatted()
+    }
+}
+
 extension UITextField {
 fileprivate func setPasswordToggleImage(_ button: UIButton) {
     if(isSecureTextEntry){
@@ -28,7 +46,7 @@ fileprivate func setPasswordToggleImage(_ button: UIButton) {
         button.setImage(UIImage(systemName: "eye.fill"), for: .normal)
     }
 }
-
+    
 func enablePasswordToggle(){
     let button = UIButton(type: .system)
     setPasswordToggleImage(button)

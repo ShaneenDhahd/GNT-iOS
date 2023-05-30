@@ -9,10 +9,15 @@
 
 import Foundation
 
-// MARK: - GovernmentsModel
+// MARK: - FormModel
 struct FormModel: Codable {
     let message: String
     let data: FormUser
+}
+// MARK: - FormsModel
+struct FormsModel: Codable {
+    let message: String
+    let data: [FormUser]
 }
 
 // MARK: - DataClass

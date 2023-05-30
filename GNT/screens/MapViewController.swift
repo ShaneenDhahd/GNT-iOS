@@ -22,6 +22,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         super.viewDidLoad()
         initMap()
     }
+   
 
     private func initMap(){
         let camera = GMSCameraPosition.camera(withLatitude: 33.315181, longitude: 44.366126, zoom: 12)

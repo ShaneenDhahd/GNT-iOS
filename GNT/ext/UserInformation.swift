@@ -29,7 +29,6 @@ class UserInformation {
             clearCache()
             let loginRealm = LoginRealm()
             loginRealm.loginModel = user
-            print("login realm model \(loginRealm.loginModel), \(user)")
             realm.add(loginRealm)
         })
     }

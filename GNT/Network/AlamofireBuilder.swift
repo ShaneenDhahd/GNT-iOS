@@ -45,6 +45,12 @@ class AlamofireBuilder {
             completion(self.parseData(data: loginData))
         }
     }
+    func getForms(completion: @escaping (ApiCallback<FormsModel?>)->() ){
+        
+        makeRequest(url: .listData, method: .post){ loginData in
+            completion(self.parseData(data: loginData))
+        }
+    }
     
     func getGovs(completion: @escaping (ApiCallback<GovernmentsModel?>)->()){
         makeRequest(url: .getGovernesses) { govs in
@@ -67,7 +73,6 @@ class AlamofireBuilder {
 	private func parseData<Model: Decodable>(data: Data?) -> ApiCallback<Model> {
         guard let data = data else {return ApiCallback.failure(nil)}
         let str = String(decoding: data, as: UTF8.self)
-        print("data string \(str)")
 		do {
 			let data = try JSONDecoder().decode(Model.self, from: data)
 			return .success(model: data)
