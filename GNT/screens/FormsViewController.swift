@@ -14,6 +14,7 @@ class FormsViewController: UIViewController {
     var forms: [FormUser] = []
     
     let formsVM = FormViewModel()
+    let userVM = LoginViewModel()
     
     
     override func viewDidLoad() {
@@ -51,8 +52,11 @@ class FormsViewController: UIViewController {
     }
     
     @IBAction func logout(_ sender: UIButton) {
-        UserInformation().logOut()
-        navigateTo(id: "login_id")
+        userVM.logout()
+        userVM.didLogout = {
+            UserInformation().logOut()
+            self.navigateTo(id: "login_id")
+        }
     }
     
     private func navigateToForm(lat: Double, long: Double){

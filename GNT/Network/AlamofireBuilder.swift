@@ -45,6 +45,12 @@ class AlamofireBuilder {
             completion(self.parseData(data: loginData))
         }
     }
+    func logout(completion: @escaping (ApiCallback<LogoutModel?>)->() ){
+        
+        makeRequest(url: .logout, method: .post){ loginData in
+            completion(self.parseData(data: loginData))
+        }
+    }
     func getForms(completion: @escaping (ApiCallback<FormsModel?>)->() ){
         
         makeRequest(url: .listData, method: .post){ loginData in

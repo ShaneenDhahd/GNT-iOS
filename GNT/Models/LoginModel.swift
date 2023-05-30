@@ -15,6 +15,10 @@ struct LoginModel: Codable {
     let data: DataClass
 }
 
+struct LogoutModel: Codable {
+    let message: String
+}
+
 // MARK: - DataClass
 struct DataClass: Codable {
     let accessToken, tokenType: String

@@ -23,7 +23,7 @@ enum Endpoint {
 			case .login:
 				endpoint = "auth/login"
             case .logout:
-                endpoint = "logout"
+                endpoint = "auth/logout"
             case .submit:
                 endpoint = "auth/submit"
             case .listData:

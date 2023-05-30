@@ -13,6 +13,7 @@ class LoginViewModel {
     
    
     var updateUI: (()->())?
+    var didLogout: (()->())?
     var showError: (()->())?
     var showLoading: (()->())?
     var hideLoading: (()->())?
@@ -45,6 +46,21 @@ class LoginViewModel {
                 if let model = model {
                     self.userInfo.storeData(user: model)
                     self.updateUI?()
+                }
+            case .failure(_):
+                self.showError?()
+            }
+        }
+    }
+     func logout(){
+
+        showLoading?()
+        AlamofireBuilder().logout() { response in
+            self.hideLoading?()
+            switch(response){
+            case .success(let model):
+                if let model = model {
+                    self.didLogout?()
                 }
             case .failure(_):
                 self.showError?()
